@@ -28,3 +28,27 @@ Team section
   Shoutout and link to Mintbean's homepage - This helps us grow the community!
 
 # Tetris Rules 
+Start: A single shape drops from the top of the screen
+The shape must be able to route in four directions, either clock wise or counter clockwise 
+The shape must slowly drop to the bottom of the screen and stay there is the same given positions. 
+End: Once the shape in at the bottom, it will stay in that position
+
+The next shape cannot occupy the same location as the previous same. 
+
+If consecutive shapes create a full line, that line will be destroyed. 
+
+ ~Questions
+
+ What is the ultimate win condition?
+
+ Do we want the game to speed up as time goes one?
+
+ Do we want a score board?  
+
+# Required steps 
+Need to have a window where the shapes can appear 
+
+# Resources / References 
+https://phaser.io/ 
+https://opengameart.org/
+https://michael-karen.medium.com/learning-modern-javascript-with-tetris-92d532bcd057
