@@ -3,7 +3,7 @@ import {StyledCell} from './Styles/StyledCell'
 import {TETROMINOS} from '../StagePieces/tetrominos'
 
 const Cell = ({type}) => (
-  <StyledCell type={type} color={TETROMINOS[type].color} />
+  <StyledCell type={'L'} color={TETROMINOS[type].color} />
 )
 
 export default Cell;
