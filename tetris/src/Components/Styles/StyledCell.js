@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledCell = styled.div`
-  display:inline;
   width: auto;
   background: #000000;
   color:rgb(164, 164, 184);
