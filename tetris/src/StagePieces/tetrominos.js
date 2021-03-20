@@ -52,3 +52,11 @@ export const TETROMINOS = {
           ], 
     color: 'add color'},
 }
+
+//gen shapes
+export const randomTetromino = () => {
+  const tetrominos = 'IJLOSTZ';
+  const randTetrominos = 
+    tetrominos[Math.floor(Math.random() * tetrominos.length)]//shouldn't this be minus 1? 
+    return TETROMINOS[randTetrominos]
+}
