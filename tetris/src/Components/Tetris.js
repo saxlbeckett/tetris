@@ -18,8 +18,11 @@ console.log('re-render')
     <div>Ready to play?
     <StyledTetrisWrapper>
       <StyledTetris>
-        <Stage stage={createStage()}/>
+        <Stage stage={stage}/>
           <aside>
+            {gameOver ? (
+              <Display gameOver={gameOver} text="GAME OVER"/>
+            ) :
             <div>
               <Display text="Score"/>
               <Display text="Rows" />
@@ -27,6 +30,7 @@ console.log('re-render')
          {/* might want to create a different   component for this */}
               <Display text="Time"/> 
             </div>
+            }
             <StartButton/>
          </aside>
       </StyledTetris>
