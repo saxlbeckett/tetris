@@ -13,7 +13,8 @@ const Tetris = () => {
       <Display text="Score"/>
        <Display text="Rows" />
        <Display text="Levels"/>
-       <Display text="Time"/>
+       {/* might want to create a different component for this */}
+       <Display text="Time"/> 
       </div>
       <StartButton/>
     </aside>
