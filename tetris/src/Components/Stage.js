@@ -5,7 +5,7 @@ const Stage = ({stage}) => {
   console.log('in the stage : ',stage)// we got the array! 
   return(
     <div>The Stage aka Board
-      {stage.map(row => row.map((cell, x) => { <Cell key={x} type={cell[0]}/>}))}
+      {stage.map(row => row.map((cell, x) => { return <Cell key={x} type={cell[0]}/>}))}
     </div>
   )
 }
