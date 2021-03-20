@@ -12,5 +12,4 @@ const Stage = ({stage}) => {
   )
 }
 
-
 export default Stage;
