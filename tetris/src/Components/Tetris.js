@@ -5,7 +5,6 @@ import StartButton from './StartButton';
 import {createStage} from '../StagePieces/gameHelper'
 
 const Tetris = () => {
-
   return(
     <div>Ready to play?
     <Stage stage={createStage()}/>

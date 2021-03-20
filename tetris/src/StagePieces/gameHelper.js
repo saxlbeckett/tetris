@@ -6,6 +6,7 @@ export const createStage = () => {
   Array.from(Array(STAGE_HEIGHT), () => {
     new Array(STAGE_WIDTH).fill([0, 'clear'])
   })
+  console.log('this is my create stage')
 } 
 
 //VISUAL OF WHAT THIS IS DOING 
