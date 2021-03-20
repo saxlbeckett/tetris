@@ -12,3 +12,5 @@ export const StyledStage = styled.div`
   max-height: 100vh
   background: #111; 
 `
+
+//responsive squares need a little work.
