@@ -3,10 +3,11 @@ import {StyledDisplay} from './Styles/StyleDisplay'
 //gameOver = lose condition 
 //text info 
 const Display = ({gameOver, text}) => (
-  <StyledDisplay>Display
-    <div>
+  <StyledDisplay
+    gameOver={gameOver}>
+
       {text}
-    </div>
+ 
   </StyledDisplay>
 )
 
