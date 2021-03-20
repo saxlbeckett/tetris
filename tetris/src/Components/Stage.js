@@ -5,7 +5,7 @@ import {StyledStage} from './Styles/StyledStage'
 const Stage = ({stage}) => {
 
   return(
-    <StyledStage>The Stage aka Board
+    <StyledStage width={stage[0].length} height={stage.length}>The Stage aka Board
       {stage.map(row => row.map((cell, x) => { return <Cell key={x} type={cell[0]}/>}))}
     </StyledStage>
   )
