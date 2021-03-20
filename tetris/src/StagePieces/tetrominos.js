@@ -8,27 +8,27 @@ export const TETROMINOS = {
             [0, 'I', 0, 0],
             [0, 'I', 0, 0]
           ], 
-    color: 'add color'},
+    color: '#0000FF'},
   J: { 
     shape: [
             [0,'J',0],
             [0,'J',0],
             ['J','J',0]
           ], 
-    color: 'add color'},
+    color: '#00FF00'},
   L: { 
     shape: [
             [0,'L',0],
             [0,'L',0],
             [0,'L','L']
           ], 
-    color: 'add color'},
+    color: '#FFFF00'},
   O: { 
     shape: [
             ['O', 'O'],
             ['O', 'O'],
           ], 
-    color: 'add color'},
+    color: '#FF8000'},
 
   S: { 
     shape: [
@@ -36,21 +36,21 @@ export const TETROMINOS = {
             ['S','S',0],
             [0,0,0]
           ], 
-    color: 'add color'},
+    color: '#FF0000'},
   T: { 
     shape: [
             [0,0,0],
             ['T','T','T'],
             [0,'T',0]    
           ], 
-    color: 'add color'},
+    color: '#CF07FF'},
   Z: { 
     shape: [
             ['Z','Z',0],
             [0,'Z','Z'],
             [0,0,0]
           ], 
-    color: 'add color'},
+    color: '#8C5CF2'},
 }
 
 //gen shapes
