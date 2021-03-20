@@ -2,8 +2,8 @@ import React from 'react';
 import {TETROMINOS} from '../StagePieces/tetrominos'
 
 const Cell = ({type}) => (
-  // do need to add color from the tetrominos object 
-  <div type={type}>Cell</div>
+  <div >{type}</div>
+  // <div type={TETROMINOS[type].shape} color={TETROMINOS[type].color}>Cell</div>
 )
 
 export default Cell;
