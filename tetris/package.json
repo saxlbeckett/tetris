@@ -34,5 +34,22 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/listenToRipley/tetris.git"
+  },
+  "keywords": [
+    "tetris",
+    "mintbean"
+  ],
+  "author": "vanessa, scott, natalie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/listenToRipley/tetris/issues"
+  },
+  "homepage": "https://github.com/listenToRipley/tetris#readme",
+  "description": ""
 }
