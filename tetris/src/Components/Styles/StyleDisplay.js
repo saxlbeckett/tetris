@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyleDisplay = styled.div`
+export const StyledDisplay = styled.div`
   display: flex;
   box-size: border-box;
   align-items: center;

@@ -1,12 +1,13 @@
 import React from 'react';
+import {StyledDisplay} from './Styles/StyleDisplay'
 //gameOver = lose condition 
 //text info 
 const Display = ({gameOver, text}) => (
-  <div>Display
+  <StyledDisplay>Display
     <div>
       {text}
     </div>
-  </div>
+  </StyledDisplay>
 )
 
 export default Display;
