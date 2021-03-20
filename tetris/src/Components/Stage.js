@@ -1,9 +1,9 @@
 import React from 'react';
-import Cell from './Cell';
+import Cells from './Cells';
 
 const Stage = ({stage}) => (
   <div>The Stage aka Board
-  <Cell />
+  <Cells />
   </div>
 )
 

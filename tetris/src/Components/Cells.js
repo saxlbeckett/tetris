@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Cell = ({type}) => (
+const Cells = ({type}) => (
   <div>Cells</div>
 )
 
