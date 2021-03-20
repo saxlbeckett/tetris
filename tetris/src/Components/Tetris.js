@@ -7,6 +7,9 @@ import {useStage} from '../Hooks/useStage'
 import { StyledTetrisWrapper, StyledTetris } from './Styles/StyledTetris';
 
 const Tetris = () => {
+  const [dropTime, setDropTime] = useState(null);
+  const [gameOver, setGameOver] = useState(false);
+
   
 
 console.log('re-render')
