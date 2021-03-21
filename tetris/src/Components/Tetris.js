@@ -25,15 +25,26 @@ console.log('re-render')
   }
 
   const drop = () => {
-
+    
   }
 
   const dropPlayer = () => {
-
+    drop()
   }
 
   const move = ({keyCode}) => {
-    console.log('pressed key ? ',keyCode)
+    if(!gameOver) {
+      //left arrow
+      if(e.keyCode === 37) {
+        movePlayer(-1);
+        //to the right
+      } else if (keyCode === 39) {
+        movePlayer(1)
+        //down
+      } else if (keyCode === 40) {
+        dropPlayer()
+      }
+    }
   }
 
   return(
