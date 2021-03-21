@@ -23,6 +23,10 @@ export const usePlayer = () => {
 
   const playerRotate = (stage, dir) => {
 
+    const copyPlayer = JSON.parse(JSON.stringify(player)); //deep clone, won't mutate
+    copyPlayer.tetrominos = rotate(copyPlayer.tetrominos, dir)
+
+    setPlayer(copyPlayer)
   }
 
   const updatePlayerPos = ({x, y, collided}) => {
@@ -45,5 +49,5 @@ export const usePlayer = () => {
   }, [])
 
 
-  return [player, updatePlayerPos, resetPlayer];
+  return [player, updatePlayerPos, resetPlayer, playerRotate];
 }
