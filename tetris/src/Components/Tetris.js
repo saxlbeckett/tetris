@@ -23,7 +23,7 @@ console.log('re-render')
 
   const startGame = () => {
     //reset everything
-
+    setStage(createStage());
     resetPlayer(); //not yet currently
     //if we use as restart, it will also reset displays 
   }
@@ -55,7 +55,7 @@ console.log('re-render')
 
   return(
     <div>Ready to play?
-    <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e) }>
+    <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={event => move(event) }>
       <StyledTetris>
         <Stage stage={stage}/>
           <aside>
@@ -70,7 +70,7 @@ console.log('re-render')
               <Display text="Time"/> 
             </div>
             }
-            <StartButton callback={startGame}/>
+            <StartButton callback={startGame()}/>
          </aside>
       </StyledTetris>
     </StyledTetrisWrapper>

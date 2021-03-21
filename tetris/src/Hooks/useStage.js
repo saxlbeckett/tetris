@@ -13,9 +13,9 @@ export const useStage = (player, resetPlayer) => {
        return row.map(cell => (cell[1] === 'clear' ? [0, 'clear'] : cell)),
     
         //draw the shapes
-        player.tetromino.forEach((column, y) => {
+        player.tetromino.forEach((row, y) => {
           //muli dimensional, need to find inner and outer, x, y 
-          column.forEach((value, x) => {
+          row.forEach((value, x) => {
             //check the value inside the array
             if(value !== 0) {
              return newStage[player.pos.y+=y][player.pos.x+=x] = [
