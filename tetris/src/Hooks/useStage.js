@@ -3,8 +3,27 @@ import {createStage} from '../StagePieces/gameHelper'
 
 export const useStage = (player, resetPlayer) => {
   const [stage, setStage] = useState(createStage());
+  const [rowsCleared, setRowsCleared] = useState(0);
 
   useEffect(() => {
+
+    setRowsCleared(0);
+
+    const sweepRows = newStage => 
+      newStage.reduce((acc, row) => {
+        //check if the row is full 
+        if(row.findIndex(cell => cell[0] === 0) === -1) {
+          setRowsCleared(prev => prev + 1);
+          acc.unshift(new Array(newStage[0].length).fill([0, 'clear'])); //remove the rows, and then add new row to the top of the stage. 
+          return acc
+        }
+        acc.push(row);
+        return acc;
+      }, [])
+    
+
+
+
     const updateStage = prevStage => {
 
       //set update the stage and reset it
