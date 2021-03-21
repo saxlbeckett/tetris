@@ -3,9 +3,8 @@ import {createStage} from '../StagePieces/gameHelper'
 
 export const useStage = (player, resetPlayer) => {
   const [stage, setStage] = useState(createStage());
-  console.log(player)
+
   useEffect(() => {
-    
     const updateStage = prevStage => {
 
       //set update the stage and reset it

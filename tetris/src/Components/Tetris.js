@@ -11,10 +11,8 @@ const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
 
-  const [player, updatePlayerPost, resetPlayer] = usePlayer(); 
-  const [stage, setStage] = useStage(player);
-
-console.log('re-render')
+  const [player, updatePlayerPost, resetPlayer] = usePlayer(); //call the hook you are using 
+  const [stage, setStage] = useStage(player); //call the stage you are creating 
 
   const movePlayer = (dir) => {
     //move left and right
@@ -24,6 +22,7 @@ console.log('re-render')
   const startGame = () => {
     //reset everything
     setStage(createStage());
+    console.log('make stage')
     resetPlayer(); //not yet currently
     //if we use as restart, it will also reset displays 
   }
@@ -61,16 +60,17 @@ console.log('re-render')
           <aside>
             {gameOver ? (
               <Display gameOver={gameOver} text="GAME OVER"/>
-            ) :
-            <div>
+            ) : (
+              <div>
               <Display text="Score"/>
               <Display text="Rows" />
               <Display text="Levels"/>
          {/* might want to create a different   component for this */}
               <Display text="Time"/> 
             </div>
+            )
             }
-            <StartButton callback={startGame()}/>
+            <StartButton onClick={startGame}/>
          </aside>
       </StyledTetris>
     </StyledTetrisWrapper>
