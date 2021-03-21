@@ -28,7 +28,8 @@ const Tetris = () => {
     resetPlayer(); //not yet currently
     //if we use as restart, it will also reset displays 
     console.log('hit the start button')
-    setGameOver(false)
+    setGameOver(false);
+    setDropTime(1000); //can use this to create a clock 
   }
 
   const drop = () => {
@@ -48,7 +49,16 @@ const Tetris = () => {
     }
   }
 
+  const keyUp = ({keyCode}) => {
+    if(!setGameOver) {
+      if(keyCode === 40) { //key up events
+        setDropTime(1000); 
+      }
+    }
+  }
+
   const dropPlayer = () => {
+    setDropTime(null)
     drop()
   }
 
@@ -79,7 +89,12 @@ const Tetris = () => {
 
   return(
     <div>Ready to play?
-    <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={event => move(event) }>
+    <StyledTetrisWrapper 
+      role="button" 
+      tabIndex="0" 
+      onKeyDown={event => move(event)} 
+      onKeyUp={keyUp}
+    >
       <StyledTetris>
         <Stage stage={stage}/>
           <aside>
