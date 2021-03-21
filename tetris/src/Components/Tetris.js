@@ -30,7 +30,10 @@ const Tetris = () => {
   }
 
   const drop = () => {
-    updatePlayerPost({x:0, y:1, collided: false})
+    
+    if(!checkCollision(player, stage, {x:0, y: 1})) {
+      updatePlayerPost({x:0, y:1, collided: false})
+    }
   }
 
   const dropPlayer = () => {
