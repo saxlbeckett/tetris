@@ -27,12 +27,23 @@ const Tetris = () => {
     resetPlayer(); //not yet currently
     //if we use as restart, it will also reset displays 
     console.log('hit the start button')
+    gameOver(false)
   }
 
   const drop = () => {
-    
+
     if(!checkCollision(player, stage, {x:0, y: 1})) {
       updatePlayerPost({x:0, y:1, collided: false})
+    } else {
+      //loose condition 
+
+        if([player.pos.y < 1]) {
+          console.log('GAME OVER')
+          setGameOver(true);
+          setDropTime(null);
+
+        }
+      updatePlayerPost({x: 0, y:0, collided: true})
     }
   }
 
