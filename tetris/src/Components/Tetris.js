@@ -37,10 +37,11 @@ console.log('re-render')
   }
 
   const move = ({keyCode}) => {
+    //include the event of the movement? Does this need to be an use effect? 
     //logic should also include that a collision has not occurred, nor reach the end. 
     if(!gameOver) {
       //left arrow
-      if(e.keyCode === 37) {
+      if(keyCode === 37) {
         movePlayer(-1);
         //to the right
       } else if (keyCode === 39) {
