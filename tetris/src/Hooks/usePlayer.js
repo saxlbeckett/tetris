@@ -21,7 +21,7 @@ export const usePlayer = () => {
   //need to use call back here to prevent infinite loop 
   const resetPlayer = useCallback(() => {
     setPlayer({
-      pos: {x: STAGE_WIDTH/2-2,y: 0},
+      pos: {x: STAGE_WIDTH/2 - 2, y: 0},
       tetrominos: randomTetromino().shape,
       collided: false
     })

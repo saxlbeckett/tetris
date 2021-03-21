@@ -3,43 +3,36 @@ import {createStage} from '../StagePieces/gameHelper';
 
 export const useStage = (player, resetPlayer) => {
   const [stage, setStage] = useState(createStage());
-  
+
   //moving items
   useEffect(() => {
+    console.log('re-render on stage')
 
     const updateStage = (prevStage) => {
       //reset from previous render
-      const newStage = prevStage.map((row) => {
-        console.log(row)
-        row.map((cell) => {
-          console.log(cell)
-          cell[1] === 'clear' ? [0, 'clear'] : cell
+      const newStage = prevStage.map(row => {
+        //something is wrong here ~ what is it? 
+        row.map(cell => (cell[1] === 'clear' ? [0, 'clear'] : cell)),
+
+        //draw the shapes
+        player.tetromino.forEach((column, y) => {
+          //muli dimensional, need to find inner and outer, x, y 
+          column.forEach((value, x) => {
+            //check the value inside the array
+            if(value !== 0) {
+              newStage[player.pos.y+=y][player.pos.x+=x] = [
+                value,
+                `${player.collided ? 'merged' : 'clear'}`
+              ]
+            }
+          })
         })
-      })
+      }); //end of the new stage stage
+      return newStage;
+    } //end of update stage
 
-      //draw stage - first look through the tetromoin's array
-      player.tetromino.forEach((row, y) => {
-        //find the value of the cell, reminder mutli-dimensional 
-        row.forEach((value, x) => { 
-          console.log(x)
-          if(value !== 0) {
-            newStage[y+player.pos.y][x+player.pos.x] = [
-              value, //one of the shapes
-              `${player.collided ? 'merge' : 'clear'}`
-            ];
-          }
-
-        })
-      })
-
-      return newStage
-    }
-
-    setStage(prev => {
-      updateStage(prev)
-    })
-
+    setStage(prev => updateStage(prev));
   }, [player])
   
   return [stage, setStage];
-}
+};
