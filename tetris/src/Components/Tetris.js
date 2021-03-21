@@ -29,7 +29,7 @@ const Tetris = () => {
     //if we use as restart, it will also reset displays 
     console.log('hit the start button')
     setGameOver(false);
-    setDropTime(1000); //can use this to create a clock 
+    setDropTime(1000); //can use this to create a clock?
   }
 
   const drop = () => {
@@ -50,6 +50,7 @@ const Tetris = () => {
   }
 
   const keyUp = ({keyCode}) => {
+    console.log('interval on')
     if(!setGameOver) {
       if(keyCode === 40) { //key up events
         setDropTime(1000); 
@@ -58,6 +59,7 @@ const Tetris = () => {
   }
 
   const dropPlayer = () => {
+    console.log('interval off')
     setDropTime(null)
     drop()
   }
