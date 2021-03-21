@@ -5,6 +5,7 @@ import StartButton from './StartButton';
 import {usePlayer} from '../Hooks/usePlayer';
 import {useStage} from '../Hooks/useStage'
 import { StyledTetrisWrapper, StyledTetris } from './Styles/StyledTetris';
+import {createStage} from '../StagePieces/gameHelper'
 
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
@@ -14,6 +15,27 @@ const Tetris = () => {
   const [stage, setStage] = useStage(player);
 
 console.log('re-render')
+
+  const movePlayer = (dir) => {
+
+  }
+
+  const startGame = () => {
+
+  }
+
+  const drop = () => {
+
+  }
+
+  const dropPlayer = () => {
+
+  }
+
+  const move = ({keyCode}) => {
+
+  }
+
   return(
     <div>Ready to play?
     <StyledTetrisWrapper>
