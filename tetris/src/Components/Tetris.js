@@ -22,7 +22,6 @@ const Tetris = () => {
   const startGame = () => {
     //reset everything
     setStage(createStage());
-    console.log('make stage')
     resetPlayer(); //not yet currently
     //if we use as restart, it will also reset displays 
   }
@@ -70,7 +69,7 @@ const Tetris = () => {
             </div>
             )
             }
-            <StartButton onClick={startGame}/>
+            <StartButton callback={startGame}/>
          </aside>
       </StyledTetris>
     </StyledTetrisWrapper>
