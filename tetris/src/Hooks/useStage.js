@@ -3,14 +3,14 @@ import {createStage} from '../StagePieces/gameHelper';
 
 export const useStage = (player, resetPlayer) => {
   const [stage, setStage] = useState(createStage());
-
+  console.log('stage', player)
   //moving items
   useEffect(() => {
-    console.log('re-render on stage')
 
     const updateStage = (prevStage) => {
       //reset from previous render
-      const newStage = prevStage.map(row => {
+      let newStage = prevStage.map(row => {
+
         //something is wrong here ~ what is it? 
         row.map(cell => (cell[1] === 'clear' ? [0, 'clear'] : cell)),
 
@@ -24,6 +24,7 @@ export const useStage = (player, resetPlayer) => {
                 value,
                 `${player.collided ? 'merged' : 'clear'}`
               ]
+    
             }
           })
         })
