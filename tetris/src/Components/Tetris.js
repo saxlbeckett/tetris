@@ -24,6 +24,7 @@ const Tetris = () => {
     setStage(createStage());
     resetPlayer(); //not yet currently
     //if we use as restart, it will also reset displays 
+    console.log('hit the start button')
   }
 
   const drop = () => {
