@@ -8,10 +8,18 @@ export const usePlayer = () => {
     tetrominos: TETROMINOS[0].shape,
     collided: false
   });
+                  //tetrominos
+  const rotate = (matrix, dir) => {
+    //make rows => columns
+    const rotateTetro = matrix.map((_, index) => 
+      matrix.map(col => col[index]),
+      )
+    //reverse reach row to get the rotation in array
+      //bigger than zero
+      if(dir > 0) return rotateTetro.map(row => row.reverse());
+      return rotateTetro.reverse
 
-  const rotate = (tetrominos, dir) => {
-
-  }
+    }
 
   const playerRotate = (stage, dir) => {
 
