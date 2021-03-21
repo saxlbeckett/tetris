@@ -6,38 +6,40 @@ export const useStage = (player, resetPlayer) => {
   
   //moving items
   useEffect(() => {
-    
-  }, [])
+
+    const updateStage = (prevStage) => {
+      //reset from previous render
+      const newStage = prevStage.map((row) => {
+        console.log(row)
+        row.map((cell) => {
+          console.log(cell)
+          cell[1] === 'clear' ? [0, 'clear'] : cell
+        })
+      })
+
+      //draw stage - first look through the tetromoin's array
+      player.tetromino.forEach((row, y) => {
+        //find the value of the cell, reminder mutli-dimensional 
+        row.forEach((value, x) => { 
+          console.log(x)
+          if(value !== 0) {
+            newStage[y+player.pos.y][x+player.pos.x] = [
+              value, //one of the shapes
+              `${player.collided ? 'merge' : 'clear'}`
+            ];
+          }
+
+        })
+      })
+
+      return newStage
+    }
+
+    setStage(prev => {
+      updateStage(prev)
+    })
+
+  }, [player])
   
-  // useEffect(() => {
-  //   const updateStage = prevStage => {
-  //     //update the stage for 1st attempt
-  //     const newStage = prevStage.map(row => {
-  //       row.map(cell => (cell[1] === 'clear' ? [0,'clear'] : cell))
-  //     })
-
-  //     //draw new shape
-  //       //go through the multi layers
-  //     player.tetromino.forEach(row, y => {
-  //       row.forEach((value, x) => {
-  //         if(value !== 0) {
-  //           newStage[y+ player.pos.y][x + player.pos.x] = [
-  //             value,
-  //             //merge is = collision 
-  //             //clear = delete on next render
-  //             `${player.collided ? 'merged' : 'clear'}`
-  //           ]
-  //         }
-  //       })
-  //     });
-
-  //     return newStage
-  //   }
-
-  //   setStage(prev => updateStage(prev))
-  //    //dependencies  
-  // }, [player])
-
-
   return [stage, setStage];
 }
