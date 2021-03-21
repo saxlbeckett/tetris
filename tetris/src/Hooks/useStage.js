@@ -10,17 +10,15 @@ export const useStage = (player, resetPlayer) => {
     const updateStage = (prevStage) => {
       //reset from previous render
       let newStage = prevStage.map(row => {
-
-        //something is wrong here ~ what is it? 
-        row.map(cell => (cell[1] === 'clear' ? [0, 'clear'] : cell)),
-
+       return row.map(cell => (cell[1] === 'clear' ? [0, 'clear'] : cell)),
+    
         //draw the shapes
         player.tetromino.forEach((column, y) => {
           //muli dimensional, need to find inner and outer, x, y 
           column.forEach((value, x) => {
             //check the value inside the array
             if(value !== 0) {
-              newStage[player.pos.y+=y][player.pos.x+=x] = [
+             return newStage[player.pos.y+=y][player.pos.x+=x] = [
                 value,
                 `${player.collided ? 'merged' : 'clear'}`
               ]
