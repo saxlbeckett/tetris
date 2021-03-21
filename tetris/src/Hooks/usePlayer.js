@@ -9,6 +9,14 @@ export const usePlayer = () => {
     collided: false
   });
 
+  const rotate = (tetrominos, dir) => {
+
+  }
+
+  const playerRotate = (stage, dir) => {
+
+  }
+
   const updatePlayerPos = ({x, y, collided}) => {
     //set state
     
