@@ -69,7 +69,7 @@ console.log('re-render')
               <Display text="Time"/> 
             </div>
             }
-            <StartButton onClick={startGame}/>
+            <StartButton callback={startGame}/>
          </aside>
       </StyledTetris>
     </StyledTetrisWrapper>
