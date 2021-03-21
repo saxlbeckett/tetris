@@ -24,7 +24,7 @@ console.log('re-render')
     //reset everything
     setStage(createStage());
     resetPlayer(); //not yet currently
-
+    //if we use as restart, it will also reset displays 
   }
 
   const drop = () => {
