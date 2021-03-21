@@ -17,7 +17,8 @@ export const usePlayer = () => {
       collided,
     }))
   }
-//need to use call back here to prevent infinite loop 
+
+  //need to use call back here to prevent infinite loop 
   const resetPlayer = useCallback(() => {
     setPlayer({
       pos: {x: STAGE_WIDTH/2-2,y: 0},
@@ -25,6 +26,7 @@ export const usePlayer = () => {
       collided: false
     })
   })
+
 
   return [player];
 }
