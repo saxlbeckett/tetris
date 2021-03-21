@@ -46,7 +46,7 @@ export const useStage = (player, resetPlayer) => {
       //check collisions 
       if(player.collided) {
         resetPlayer();
-        return sweepRows(); //git add, check if the collision results in a completed row 
+        return sweepRows(newStage); //git add, check if the collision results in a completed row 
       }
 
       return newStage
