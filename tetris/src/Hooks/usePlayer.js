@@ -1,5 +1,5 @@
 import {useState, useCallback} from 'react';
-import { STAGE_WIDTH } from '../StagePieces/gameHelper';
+import { checkCollision, STAGE_WIDTH } from '../StagePieces/gameHelper';
 import {TETROMINOS, randomTetromino} from '../StagePieces/tetrominos';
 
 export const usePlayer = () => {
@@ -25,6 +25,22 @@ export const usePlayer = () => {
 
     const copyPlayer = JSON.parse(JSON.stringify(player)); //deep clone, won't mutate
     copyPlayer.tetrominos = rotate(copyPlayer.tetrominos, dir)
+
+    //make sure the rotation doesn't go outside of stage && make sure it does not cross over into another shape
+    const pos = copyPlayer.pos.x
+    let offset = 1;
+
+    while(checkCollision(copyPlayer, stage, {x:0, y:0})) {
+      copyPlayer.pos.x += offset;
+      offset = -(offset + (offset > 0 ? 1 : -1)); //back and forth movements
+
+      if(offset > copyPlayer.tetrominos[0].length) {
+        rotate(copyPlayer.tetrominos, -dir);
+        copyPlayer.pos.x = pos; 
+        return;
+      }
+    }
+
 
     setPlayer(copyPlayer)
   }
