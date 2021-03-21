@@ -3,7 +3,8 @@ import Stage from './Stage';
 import Display from './Display';
 import StartButton from './StartButton'; 
 import {usePlayer} from '../Hooks/usePlayer';
-import {useStage} from '../Hooks/useStage'
+import {useStage} from '../Hooks/useStage';
+import {useInterval} from '../Hooks/useIntervals';
 import { StyledTetrisWrapper, StyledTetris } from './Styles/StyledTetris';
 import {createStage, checkCollision} from '../StagePieces/gameHelper'
 
@@ -27,7 +28,7 @@ const Tetris = () => {
     resetPlayer(); //not yet currently
     //if we use as restart, it will also reset displays 
     console.log('hit the start button')
-    gameOver(false)
+    setGameOver(false)
   }
 
   const drop = () => {
@@ -54,7 +55,7 @@ const Tetris = () => {
   const move = ({keyCode}) => {
     //include the event of the movement? Does this need to be an use effect? 
     //logic should also include that a collision has not occurred, nor reach the end. 
-    if(!gameOver) {
+    if(!setGameOver) {
       //left arrow
       if(keyCode === 37) {
         movePlayer(-1);
@@ -69,6 +70,12 @@ const Tetris = () => {
       }
     }
   }
+
+
+  useInterval(() => {
+    drop();
+  }, dropTime)
+
 
   return(
     <div>Ready to play?
