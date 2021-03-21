@@ -22,6 +22,9 @@ console.log('re-render')
 
   const startGame = () => {
     //reset everything
+    setStage(createStage());
+    resetPlayer(); //not yet currently included
+
   }
 
   const drop = () => {
