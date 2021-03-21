@@ -23,13 +23,19 @@ export const useStage = (player, resetPlayer) => {
           }
         })
       })
+
+      //check collisions 
+      if(player.collided) {
+        resetPlayer();
+      }
+
       return newStage
     }//end of updateStage
 
     setStage(prev => updateStage(prev))
 
     //dependency 
-  }, [player])
+  }, [player, resetPlayer])
 
   return [stage, setStage];
 }
