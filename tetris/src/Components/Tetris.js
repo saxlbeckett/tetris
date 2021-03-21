@@ -21,11 +21,11 @@ console.log('re-render')
   }
 
   const startGame = () => {
-
+    //reset everything
   }
 
   const drop = () => {
-    
+    updatePlayerPost({x:0, y:1, collided: false})
   }
 
   const dropPlayer = () => {
@@ -33,6 +33,7 @@ console.log('re-render')
   }
 
   const move = ({keyCode}) => {
+    //logic should also include that a collision has not occurred, nor reach the end. 
     if(!gameOver) {
       //left arrow
       if(e.keyCode === 37) {
