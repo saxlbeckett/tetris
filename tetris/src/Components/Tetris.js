@@ -23,7 +23,7 @@ console.log('re-render')
   const startGame = () => {
     //reset everything
     setStage(createStage());
-    resetPlayer(); //not yet currently included
+    resetPlayer(); //not yet currently
 
   }
 
@@ -68,7 +68,7 @@ console.log('re-render')
               <Display text="Time"/> 
             </div>
             }
-            <StartButton/>
+            <StartButton onClick={startGame}/>
          </aside>
       </StyledTetris>
     </StyledTetrisWrapper>
