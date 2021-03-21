@@ -33,12 +33,12 @@ console.log('re-render')
   }
 
   const move = ({keyCode}) => {
-
+    console.log('pressed key ? ',keyCode)
   }
 
   return(
     <div>Ready to play?
-    <StyledTetrisWrapper>
+    <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e) }>
       <StyledTetris>
         <Stage stage={stage}/>
           <aside>
