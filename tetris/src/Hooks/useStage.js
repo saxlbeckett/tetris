@@ -57,5 +57,5 @@ export const useStage = (player, resetPlayer) => {
     //dependency 
   }, [player, resetPlayer, rowsCleared])
 
-  return [stage, setStage];
+  return [stage, setStage, rowsCleared];
 }
