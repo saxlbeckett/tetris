@@ -68,6 +68,13 @@ const Tetris = () => {
         setDropTime(1000); 
       }
     }
+
+    if(rows > (setLevel + 1) * 10) {
+      setLevel(prev => prev + 1)
+      //increase speed
+      setDropTime(1000 / (setLevel + 1 ) + 200); 
+    }
+
   }
 
   const dropPlayer = () => {
@@ -117,9 +124,10 @@ const Tetris = () => {
               <Display gameOver={gameOver} text="GAME OVER"/>
             ) : (
               <div>
-              <Display text="Score"/>
-              <Display text="Rows" />
-              <Display text="Levels"/>
+              {/* need to change for after set has occured */}
+              <Display text={`${score}`}/> 
+              <Display text={`${rows}`} /> 
+              <Display text={`${level}`}/> 
          {/* might want to create a different   component for this */}
               <Display text="Time"/> 
             </div>
