@@ -5,5 +5,5 @@ import {TETROMINOS} from '../StagePieces/tetrominos'
 const Cell = ({type}) => (
   <StyledCell type={'L'} color={TETROMINOS[type].color} />
 )
-
-export default Cell;
+//only render as needed
+export default React.memo(Cell);
