@@ -14,7 +14,8 @@ const Tetris = () => {
   const [gameOver, setGameOver] = useState(false);
 
   const [player, updatePlayerPost, resetPlayer, playerRotate] = usePlayer(); //call the hook you are using 
-  const [stage, setStage] = useStage(player); //call the stage you are creating 
+  const [stage, setStage, rowsCleared] = useStage(player); //call the stage you are creating 
+  const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(rowsCleared);
 
   const movePlayer = (dir) => {
     //move left and right
