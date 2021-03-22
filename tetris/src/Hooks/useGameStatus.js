@@ -13,7 +13,7 @@ export const useGameStatus = rowsCleared => {
 
       if(rowsCleared > 0) {
         setScore(prev => prev + linePoints[rowCleared - 1] * (setLevel + 1))
-        setRows(prev => prev + rowsCleared)
+        setRow(prev => prev + rowsCleared)
 
       }
     

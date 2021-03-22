@@ -5,6 +5,7 @@ import StartButton from './StartButton';
 import {usePlayer} from '../Hooks/usePlayer';
 import {useStage} from '../Hooks/useStage';
 import {useInterval} from '../Hooks/useIntervals';
+import {useGameStatus} from '../Hooks/useGameStatus';
 import { StyledTetrisWrapper, StyledTetris } from './Styles/StyledTetris';
 import {createStage, checkCollision} from '../StagePieces/gameHelper'
 
