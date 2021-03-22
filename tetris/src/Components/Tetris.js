@@ -32,9 +32,19 @@ const Tetris = () => {
     console.log('hit the start button')
     setGameOver(false);
     setDropTime(1000); //can use this to create a clock?
+    setScore(0);
+    setRows(0);
+    setLevel(0);
   }
 
   const drop = () => {
+    //increase level after clear 10 rows
+
+    if(rows > (setLevel + 1) * 10) {
+      setLevel(prev => prev + 1)
+      //increase speed
+      setDropTime(1000 / (setLevel + 1 ) + 200); 
+    }
 
     if(!checkCollision(player, stage, {x:0, y: 1})) {
       updatePlayerPost({x:0, y:1, collided: false})
@@ -64,6 +74,7 @@ const Tetris = () => {
     console.log('interval off')
     setDropTime(null)
     drop()
+    
   }
 
   const move = ({keyCode}) => {
